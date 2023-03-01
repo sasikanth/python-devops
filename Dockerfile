@@ -3,5 +3,6 @@ RUN apt-get update && \
     apt-get install -y \
     bash curl jq \
     && rm -rf /var/lib/apt/lists/*
-RUN pip install requests
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 ENTRYPOINT ["/bin/bash"]
